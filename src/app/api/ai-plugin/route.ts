@@ -109,11 +109,9 @@ export async function GET() {
           schema: {
             type: "string",
           },
-          example: `token_type,token_address,receiver,amount,id
-erc20,0x6810e776880c02933d47db1b9fc05908e5386b96,0x1000000000000000000000000000000000000000,0.0001,
-erc20,0x6b175474e89094c44da98b954eedeac495271d0f,0x2000000000000000000000000000000000000000,0.0001,
-native,,0x3000000000000000000000000000000000000000,0.0001,
-nft,0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85,0x4000000000000000000000000000000000000000,,42`,
+          example: `token_type,token_address,receiver,value,id
+erc20,0x6810e776880c02933d47db1b9fc05908e5386b96,0x54F08c27e75BeA0cdDdb8aA9D69FD61551B19BbA,0.5,
+native,,0x54F08c27e75BeA0cdDdb8aA9D69FD61551B19BbA,0.0001,`,
         },
       },
       responses: {

@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@bitte-ai/agent-sdk": "^0.1.7",
-    "multi-asset-transfer": "^0.0.6",
+    "multi-asset-transfer": "^0.0.7",
     "next": "15.1.6",
     "redoc": "^2.3.0",
     "vercel-url": "^0.2.6",
