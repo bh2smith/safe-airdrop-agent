@@ -1,0 +1,32 @@
+{
+  "name": "wraptor-agent",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "start": "next start",
+    "dev": "concurrently \"next dev --turbopack\" \"make-agent dev -p 3000\"",
+    "dev-testnet": "concurrently \"next dev --turbopack\" \"make-agent dev -p 3000 -t\"",
+    "lint": "next lint && prettier --check '{src/app,tests}/**/*.{js,jsx,ts,tsx}'",
+    "fmt": "next lint --fix && prettier --write '{src/app,tests}/**/*.{js,jsx,ts,tsx}'",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@bitte-ai/agent-sdk": "^0.1.7",
+    "multi-asset-transfer": "^0.0.6",
+    "next": "15.1.6",
+    "redoc": "^2.3.0",
+    "vercel-url": "^0.2.6",
+    "viem": "^2.22.21"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.1",
+    "concurrently": "^9.1.2",
+    "eslint-config-next": "15.1.6",
+    "jest": "^29.7.0",
+    "make-agent": "^0.1.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3"
+  }
+}
