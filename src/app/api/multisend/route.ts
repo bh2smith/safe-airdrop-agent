@@ -1,4 +1,5 @@
-import { defaultParser } from "multi-asset-transfer";
+import { defaultParser, buildMetaTransaction } from "multi-asset-transfer";
+import { signRequestFor } from "@bitte-ai/agent-sdk";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
@@ -21,6 +22,15 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
   if (warnings.length > 0) {
     console.warn("Parser Warnings", warnings);
   }
+  const txs = buildMetaTransaction(transfers);
 
-  return NextResponse.json({ meta: { transfers, warnings } });
+  const signRequest = signRequestFor({
+    chainId: Number(chainId),
+    metaTransactions: txs,
+  });
+  console.log("Sign Request", signRequest);
+  return NextResponse.json({
+    transaction: signRequest,
+    meta: { transfers, warnings },
+  });
 }

@@ -5,7 +5,7 @@
       "name": "wraptor-agent",
       "dependencies": {
         "@bitte-ai/agent-sdk": "^0.1.7",
-        "multi-asset-transfer": "^0.0.7",
+        "multi-asset-transfer": "^0.0.8",
         "next": "15.1.6",
         "redoc": "^2.3.0",
         "vercel-url": "^0.2.6",
@@ -108,7 +108,7 @@
 
     "@bcoe/v8-coverage": ["@bcoe/v8-coverage@0.2.3", "", {}, "sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw=="],
 
-    "@bitte-ai/agent-sdk": ["@bitte-ai/agent-sdk@0.1.7", "", { "dependencies": { "near-safe": "^0.9.6", "viem": "^2.21.53", "zerion-sdk": "^0.0.13" } }, "sha512-C2GpxOAiQNMpgeXT/Uf0DKbHDSOCAIVRc3XmO4PMDm81o9ZUGJenXyYfeN3/u2WQGfT5GNOpChUels6OgAnWOg=="],
+    "@bitte-ai/agent-sdk": ["@bitte-ai/agent-sdk@0.1.8", "", { "dependencies": { "near-safe": "^0.9.10", "viem": "^2.22.21", "zerion-sdk": "^0.0.13" } }, "sha512-zgfhxriw3IEUXRyoHSsuqJzxPn4049uVigmmnsEEDNtUMwAC3/VZbCj/DWrXS/DWakmp2gG7ApuXtszy7oYNhw=="],
 
     "@cspotcode/source-map-support": ["@cspotcode/source-map-support@0.8.1", "", { "dependencies": { "@jridgewell/trace-mapping": "0.3.9" } }, "sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw=="],
 
@@ -1208,7 +1208,7 @@
 
     "ms": ["ms@2.1.3", "", {}, "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA=="],
 
-    "multi-asset-transfer": ["multi-asset-transfer@0.0.7", "", { "dependencies": { "near-ca": "^0.9.0", "papaparse": "^5.5.2", "viem": "^2.22.21" }, "peerDependencies": { "typescript": "^5.0.0" } }, "sha512-EBQhouLbXAAJwUNT4Z5oyLk6vs+mcKwQ6jTKhQIDua/fQ+JJk+vT5C9MwQ9sIUyg0VrbkKLaBX7T3YPLH3b3/g=="],
+    "multi-asset-transfer": ["multi-asset-transfer@0.0.8", "", { "dependencies": { "near-ca": "^0.9.0", "papaparse": "^5.5.2", "viem": "^2.22.21" }, "peerDependencies": { "typescript": "^5.0.0" } }, "sha512-eruylr5y6PtPUflpKNizsl57o7iuiHK1RXKgGYLJ9+kV0LQeF7sxyT0H7UTLyXzcUXKPqGzxt0/+POmfQ9l1lw=="],
 
     "multiformats": ["multiformats@9.9.0", "", {}, "sha512-HoMUjhH9T8DDBNT+6xzkrd9ga/XiBI4xLr58LJACwK6G3HTOPeMz4nB4KJs33L2BelrIJa7P0VuNaVF3hMYfjg=="],
 
@@ -1695,8 +1695,6 @@
     "@babel/core/json5": ["json5@2.2.3", "", { "bin": { "json5": "lib/cli.js" } }, "sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg=="],
 
     "@babel/traverse/globals": ["globals@11.12.0", "", {}, "sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA=="],
-
-    "@bitte-ai/agent-sdk/viem": ["viem@2.22.19", "", { "dependencies": { "@noble/curves": "1.8.1", "@noble/hashes": "1.7.1", "@scure/bip32": "1.6.2", "@scure/bip39": "1.5.4", "abitype": "1.0.8", "isows": "1.0.6", "ox": "0.6.7", "ws": "8.18.0" }, "peerDependencies": { "typescript": ">=5.0.4" }, "optionalPeers": ["typescript"] }, "sha512-aGR/NUHaboQ/HoS86wYfJWbXt6aewjhp2OCO2uczCrusgcwXO/qC0l36AcFVw2dkOPBEhIG5oXMEso97L+xHmA=="],
 
     "@cspotcode/source-map-support/@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.9", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.0.3", "@jridgewell/sourcemap-codec": "^1.4.10" } }, "sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ=="],
 
