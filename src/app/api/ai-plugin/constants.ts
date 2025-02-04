@@ -1,6 +1,6 @@
 export const NAME = "Bitte Distribute Tokens";
 export const DESCRIPTION =
-  "Agent API for Multi-Token Transfers. Only for Contract Wallets";
+  "Agent API for Multi-Token Transfers on EVM Chains. Only for Smart Contract Wallets (like Safe).";
 
 export const IMAGE = "icon.svg";
 // Important - this is the agent prompt.
@@ -12,7 +12,8 @@ export const IMAGE = "icon.svg";
 // otherwise proceed with deploy.
 // Tells the user that they must sign the transaction before the url will display the results.
 // Always passes evmAddress as the safeAddress."
-export const INSTRUCTIONS = "Tell The DEV TO FILL THIS FIELD OUT.";
+export const INSTRUCTIONS =
+  "Transforms chainId and csv text or reference to a single transaction encoding multiple asset transfers. Shows the user any warnings returned in meta and suggests how to fix the proposed CSV file if warnings are trivial";
 
 export const CATEGORIES = ["multisend", "csv", "airdrop"];
 // All EIP155 Chains Supported by Safe: https://github.com/safe-global/safe-deployments/blob/main/src/assets/v1.3.0/gnosis_safe.json
