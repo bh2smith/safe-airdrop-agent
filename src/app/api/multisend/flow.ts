@@ -5,16 +5,11 @@ import {
   getCollectibleBalance,
   Transfer,
   InsufficientBalanceInfo,
+  CodeWarning
 } from "multi-asset-transfer";
 import { Address } from "viem";
 import { isUrl } from "../../util";
 import { fetchSheet, formatDataToCSV } from "../../sheets/";
-
-interface CodeWarning {
-  message: string;
-  severity: string;
-  lineNum: number;
-}
 
 export async function csvAirdrop(
   chainId: number,
