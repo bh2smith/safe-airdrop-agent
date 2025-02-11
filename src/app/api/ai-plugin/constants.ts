@@ -15,7 +15,7 @@ export const IMAGE = "icon.svg";
 export const INSTRUCTIONS =
   "Transforms chainId and csv text or reference to a single transaction encoding multiple asset transfers. Shows the user any warnings returned in meta and suggests how to fix the proposed CSV file if warnings are trivial";
 
-export const CATEGORIES = ["multisend", "csv", "airdrop"];
+export const CATEGORIES = ["multisend", "csv", "airdrop", "defi"];
 // All EIP155 Chains Supported by Safe: https://github.com/safe-global/safe-deployments/blob/main/src/assets/v1.3.0/gnosis_safe.json
 export const CHAIN_IDS = [
   1, 10, 16, 18, 19, 25, 28, 43, 44, 46, 56, 57, 61, 63, 69, 81, 82, 83, 100,
