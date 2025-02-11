@@ -13,15 +13,17 @@
   },
   "dependencies": {
     "@bitte-ai/agent-sdk": "^0.1.8",
-    "multi-asset-transfer": "^0.1.1",
+    "multi-asset-transfer": "^0.1.2",
     "next": "15.1.6",
+    "papaparse": "^5.5.2",
     "redoc": "^2.4.0",
     "vercel-url": "^0.2.6",
-    "viem": "^2.23.0"
+    "viem": "^2.23.1"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.1",
+    "@types/papaparse": "^5.3.15",
     "@types/react": "19.0.8",
     "concurrently": "^9.1.2",
     "eslint": "^9.20.0",

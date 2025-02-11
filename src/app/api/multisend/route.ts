@@ -1,11 +1,4 @@
 import {
-  defaultParser,
-  buildMetaTransactions,
-  checkAllBalances,
-  getFungibleBalance,
-  getCollectibleBalance,
-} from "multi-asset-transfer";
-import {
   FieldParser,
   signRequestFor,
   numberField,
@@ -14,6 +7,8 @@ import {
 } from "@bitte-ai/agent-sdk";
 import { NextRequest, NextResponse } from "next/server";
 import { Address } from "viem";
+import { csvAirdrop } from "./flow";
+import { buildMetaTransactions } from "multi-asset-transfer";
 
 interface Input {
   chainId: number;
@@ -29,29 +24,11 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
   const { searchParams } = request.nextUrl;
   console.log("MultiSend Request", searchParams);
   const { chainId, safeAddress } = validateInput<Input>(searchParams, parsers);
-  const csv = searchParams.get("csv");
-  // TODO: Validate CSV and allow fetch from URL.
-  if (!csv) {
-    return NextResponse.json({ error: "CSV is required" }, { status: 400 });
-  }
-
-  const parser = defaultParser(chainId);
-  const [transfers, warnings] = await parser(csv);
-  if (warnings.length > 0) {
-    console.warn("Parser Warnings", warnings);
-  }
-  const [fungibleBalances, nftBalances] = await Promise.all([
-    getFungibleBalance(chainId, safeAddress),
-    getCollectibleBalance(chainId, safeAddress),
-  ]);
-  const insufficientBalances = checkAllBalances(
-    fungibleBalances,
-    nftBalances,
-    transfers,
+  const { transfers, warnings, balances } = await csvAirdrop(
+    chainId,
+    safeAddress,
+    searchParams.get("csv"),
   );
-  if (insufficientBalances.length > 0) {
-    console.warn("Insufficient balance warning", insufficientBalances);
-  }
 
   const signRequest = signRequestFor({
     chainId,
@@ -59,10 +36,13 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
   });
   console.log("Sign Request", signRequest);
   return NextResponse.json({
-    transaction: signRequest,
+    transaction: signRequestFor({
+      chainId,
+      metaTransactions: buildMetaTransactions(transfers),
+    }),
     meta: {
       transfers,
-      warnings: { parse: warnings, balance: insufficientBalances },
+      warnings: { parse: warnings, balances },
     },
   });
 }
