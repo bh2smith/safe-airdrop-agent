@@ -21,6 +21,7 @@ const parsers: FieldParser<Input> = {
 };
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
+  console.log("Request Headers", request.headers);
   const { searchParams } = request.nextUrl;
   console.log("MultiSend Request", searchParams);
   const { chainId, safeAddress } = validateInput<Input>(searchParams, parsers);

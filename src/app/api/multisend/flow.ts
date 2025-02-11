@@ -30,6 +30,7 @@ export async function csvAirdrop(
   }
 
   if (isUrl(csv)) {
+    console.log("Got CSV URL", csv);
     const sheet = await fetchSheet(csv);
     csv = formatDataToCSV(sheet);
   }
