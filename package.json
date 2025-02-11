@@ -5,8 +5,8 @@
   "scripts": {
     "build": "next build",
     "start": "next start",
-    "dev": "concurrently \"next dev --turbopack\" \"make-agent dev\"",
-    "dev-testnet": "concurrently \"next dev --turbopack\" \"make-agent dev -p 3000 -t\"",
+    "dev": "concurrently \"next dev\" \"make-agent dev\"",
+    "dev-testnet": "concurrently \"next dev --turbopack\" \"make-agent dev -t\"",
     "lint": "next lint && prettier --check '{src/app,tests}/**/*.{js,jsx,ts,tsx}'",
     "fmt": "next lint --fix && prettier --write '{src/app,tests}/**/*.{js,jsx,ts,tsx}'",
     "test": "jest"
@@ -25,6 +25,8 @@
     "@types/node": "^22.13.1",
     "@types/papaparse": "^5.3.15",
     "@types/react": "19.0.8",
+    "ajv": "^8.17.1",
+    "ajv-draft-04": "^1.0.0",
     "concurrently": "^9.1.2",
     "eslint": "^9.20.0",
     "eslint-config-next": "15.1.6",
