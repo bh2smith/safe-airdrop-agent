@@ -72,6 +72,7 @@ export async function GET() {
           parameters: [
             { $ref: "#/components/parameters/chainId" },
             { $ref: "#/components/parameters/csv" },
+            { $ref: "#/components/parameters/safeAddress" },
           ],
           responses: {
             "200": { $ref: "#/components/responses/SignRequestResponse200" },
