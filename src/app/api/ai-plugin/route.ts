@@ -10,7 +10,7 @@ import {
 
 const bitteConfig = JSON.parse(process.env.BITTE_CONFIG || "{}");
 
-const url = bitteConfig.url || "http://localhost:3000";
+const url = bitteConfig.url || "https://safe-airdrop-agent.vercel.app/";
 
 export async function GET() {
   const pluginData = {
