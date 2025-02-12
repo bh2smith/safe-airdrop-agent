@@ -6,8 +6,6 @@ describe("sheets", () => {
     const url =
       "https://docs.google.com/spreadsheets/d/1arxFjc-pLh9m_Uf27EGsqNtu3PNcUsyzA4J0__cUnk4/export?format=csv";
     const sheet = await fetchSheet(url);
-    console.log("Got Sheet", sheet);
-
     const asStr = formatDataToCSV(sheet);
     console.log(asStr);
   });
