@@ -80,9 +80,37 @@ export async function GET() {
           },
         },
       },
+      "/api/drain-safe": {
+        get: {
+          tags: ["drain"],
+          summary:
+            "Encodes MultiSend Transaction to Drain Safe to another Account",
+          description:
+            "Encodes multiple transfer transactions as an array of MetaTransaction",
+          operationId: "multisend",
+          parameters: [
+            { $ref: "#/components/parameters/chainId" },
+            { $ref: "#/components/parameters/recipient" },
+            { $ref: "#/components/parameters/safeAddress" },
+          ],
+          responses: {
+            "200": { $ref: "#/components/responses/SignRequestResponse200" },
+            "400": { $ref: "#/components/responses/BadRequest400" },
+          },
+        },
+      },
     },
     components: {
       parameters: {
+        recipient: {
+          name: "recipient",
+          in: "query",
+          required: true,
+          description: "The Recpient of Drain Safe Transaction",
+          schema: {
+            $ref: "#/components/schemas/Address",
+          },
+        },
         safeAddress: {
           name: "safeAddress",
           in: "query",
