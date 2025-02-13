@@ -133,7 +133,8 @@ export async function GET() {
         csv: {
           name: "csv",
           in: "query",
-          description: "CSV Data of Transfer. Can also be a URL to a Google sheet. The agent is capable of fetching CSV from URL.",
+          description:
+            "CSV Data of Transfer. Can also be a URL to a Google sheet. The agent is capable of fetching CSV from URL.",
           required: true,
           schema: {
             type: "string",
