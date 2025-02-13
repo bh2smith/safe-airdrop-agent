@@ -87,7 +87,7 @@ export async function GET() {
             "Encodes MultiSend Transaction to Drain Safe to another Account",
           description:
             "Encodes multiple transfer transactions as an array of MetaTransaction",
-          operationId: "multisend",
+          operationId: "drain-safe",
           parameters: [
             { $ref: "#/components/parameters/chainId" },
             { $ref: "#/components/parameters/recipient" },
