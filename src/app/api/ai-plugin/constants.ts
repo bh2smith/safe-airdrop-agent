@@ -2,7 +2,7 @@ export const NAME = "Bitte Distribute Tokens";
 export const DESCRIPTION =
   "Agent API for Multi-Token Transfers on EVM Chains. Only for Smart Contract Wallets (like Safe).";
 
-export const IMAGE = "icon.svg";
+export const IMAGE = "logo.svg";
 // Important - this is the agent prompt.
 // Encodes Safe account transactions as signature requests such as add recovery address and deployment.
 // This assistant is only for EVM networks.
