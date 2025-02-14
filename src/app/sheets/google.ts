@@ -7,8 +7,25 @@ import {
   TokenType,
 } from "./types";
 
-export async function fetchSheet(url: string): Promise<ParsedCSVResponse> {
+export function extractSheetId(url: string): string {
   try {
+    // Extract the sheet ID from the URL
+    const match = url.match(/\/d\/(.*?)(\/|$)/);
+    if (!match) {
+      throw new Error("Invalid Google Sheets URL");
+    }
+
+    const sheetId = match[1];
+    return sheetId;
+  } catch {
+    throw new Error("Failed to transform Google Sheets URL");
+  }
+}
+
+export async function fetchSheet(sheetUrl: string): Promise<ParsedCSVResponse> {
+  try {
+    const sheetId = extractSheetId(sheetUrl);
+    const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv`;
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
