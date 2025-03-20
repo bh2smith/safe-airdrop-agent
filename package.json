@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "dev": "concurrently \"next dev\" \"make-agent dev\"",
-    "dev-testnet": "concurrently \"next dev --turbopack\" \"make-agent dev -t\"",
+    "dev-testnet": "concurrently \"next dev\" \"make-agent dev -t\"",
     "lint": "next lint && prettier --check '{src/app,tests}/**/*.{js,jsx,ts,tsx}'",
     "fmt": "next lint --fix && prettier --write '{src/app,tests}/**/*.{js,jsx,ts,tsx}'",
     "test": "jest"
