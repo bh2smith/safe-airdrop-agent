@@ -13,6 +13,7 @@ import { isUrl } from "../../util";
 import { fetchSheet, formatDataToCSV } from "../../sheets/";
 import { NextResponse } from "next/server";
 import { signRequestFor } from "@bitte-ai/agent-sdk";
+import type { MetaTransaction } from "@bitte-ai/types";
 
 type ResponseData = {
   transfers: Transfer[];
@@ -72,7 +73,7 @@ export function buildResponse(
 ): NextResponse {
   const transaction = signRequestFor({
     chainId,
-    metaTransactions: buildMetaTransactions(transfers),
+    metaTransactions: buildMetaTransactions(transfers) as MetaTransaction[],
   });
   console.log("Sign Request", transaction);
   return NextResponse.json({
