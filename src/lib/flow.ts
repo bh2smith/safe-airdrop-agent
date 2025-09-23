@@ -6,9 +6,9 @@ import {
   InsufficientBalanceInfo,
 } from "multi-asset-transfer";
 import { Address } from "viem";
-import { fetchSheet, formatDataToCSV } from "./sheets";
-import { ResponseData } from "./types";
-import { isUrl } from "./util";
+import { fetchSheet, formatDataToCSV } from "./sheets/index.js";
+import { ResponseData } from "./types.js";
+import { isUrl } from "./util.js";
 
 export async function csvAirdrop(
   chainId: number,

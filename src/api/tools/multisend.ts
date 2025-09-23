@@ -6,13 +6,8 @@ import {
   validateInput,
 } from "@bitte-ai/agent-sdk";
 import { Address } from "viem";
-import {
-  drainSafe,
-  getCollectibleBalance,
-  getFungibleBalance,
-} from "multi-asset-transfer";
-import { csvAirdrop } from "@/src/lib/flow";
-import { buildResponse } from "@/src/lib/util";
+import { csvAirdrop } from "../../lib/flow.js";
+import { buildResponse } from "../../lib/util.js";
 
 interface Input {
   chainId: number;

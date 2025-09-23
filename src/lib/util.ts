@@ -1,6 +1,6 @@
 import { MetaTransaction, SignRequest } from "@bitte-ai/agent-sdk/evm";
 import { buildMetaTransactions } from "multi-asset-transfer";
-import { ResponseData } from "./types";
+import { ResponseData } from "./types.js";
 export function isUrl(value: string): boolean {
   try {
     const url = new URL(value);

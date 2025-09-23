@@ -1,4 +1,4 @@
-import { ParsedCSVResponse } from "./types";
+import { ParsedCSVResponse } from "./types.js";
 
 // TODO(bh2smith): Maybe use sheet.meta here.
 export function formatDataToCSV(sheet: ParsedCSVResponse): string {
