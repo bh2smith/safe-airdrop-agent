@@ -12,8 +12,7 @@ import { Address } from "viem";
 import { isUrl } from "../../util";
 import { fetchSheet, formatDataToCSV } from "../../sheets/";
 import { NextResponse } from "next/server";
-import { signRequestFor } from "@bitte-ai/agent-sdk/evm";
-import type { MetaTransaction } from "@bitte-ai/types";
+import { signRequestFor, MetaTransaction } from "@bitte-ai/agent-sdk/evm";
 
 type ResponseData = {
   transfers: Transfer[];
