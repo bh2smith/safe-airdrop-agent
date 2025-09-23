@@ -2,6 +2,7 @@
   "name": "airdrop-agent",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "agent": "concurrently \"tsx src/index.ts\" \"make-agent dev\"",
     "api": "tsx src/index.ts",
