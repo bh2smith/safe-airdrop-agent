@@ -527,7 +527,7 @@
 
     "ms": ["ms@2.1.3", "", {}, "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA=="],
 
-    "multi-asset-transfer": ["multi-asset-transfer@0.2.1", "", { "dependencies": { "papaparse": "^5.5.3", "viem": "^2.37.8" }, "peerDependencies": { "typescript": "^5.9.2" } }, "sha512-zBPA9kTfRlRYKOg0bRXFtrsCgHMpKF+ntpOTlqTWMpmy6cMTMw/TViZnMeJgWJnmojfoYKljqEn/V/7eETdMGg=="],
+    "multi-asset-transfer": ["multi-asset-transfer@0.2.2", "", { "dependencies": { "papaparse": "^5.5.3", "viem": "^2.37.8" }, "peerDependencies": { "typescript": "^5.9.2" } }, "sha512-P36Hb3skUIROLqpl/I3t78IKlAQcEOuwcAyZGm3F+xYztmSijulz1JRDnAfTVeZF3o1NYvUpwe4V5pxBTJpdsQ=="],
 
     "mustache": ["mustache@4.0.0", "", { "bin": { "mustache": "./bin/mustache" } }, "sha512-FJgjyX/IVkbXBXYUwH+OYwQKqWpFPLaLVESd70yHjSDunwzV2hZOoTBvPf4KLoxesUzzyfTH6F784Uqd7Wm5yA=="],
 
