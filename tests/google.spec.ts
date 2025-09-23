@@ -1,5 +1,5 @@
-import { formatDataToCSV } from "@/src/app/sheets/format";
-import { extractSheetId, fetchSheet } from "@/src/app/sheets/google";
+import { formatDataToCSV } from "@/src/lib/sheets/format";
+import { extractSheetId, fetchSheet } from "@/src/lib/sheets/google";
 
 describe("sheets", () => {
   it("google", async () => {

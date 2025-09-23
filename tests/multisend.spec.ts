@@ -1,4 +1,4 @@
-import { csvAirdrop } from "@/src/app/api/multisend/flow";
+import { csvAirdrop } from "@/src/lib/flow";
 import { buildMetaTransactions } from "multi-asset-transfer";
 
 describe.skip("sheets", () => {

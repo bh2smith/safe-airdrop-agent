@@ -1,17 +1,18 @@
+import { Router, Request, Response } from "express";
 import {
   FieldParser,
   numberField,
   addressField,
   validateInput,
 } from "@bitte-ai/agent-sdk";
-import { NextRequest, NextResponse } from "next/server";
 import { Address } from "viem";
 import {
   drainSafe,
   getCollectibleBalance,
   getFungibleBalance,
 } from "multi-asset-transfer";
-import { buildResponse, csvAirdrop } from "../multisend/flow";
+import { csvAirdrop } from "@/src/lib/flow";
+import { buildResponse } from "@/src/lib/util";
 
 interface Input {
   chainId: number;
@@ -25,12 +26,13 @@ const parsers: FieldParser<Input> = {
   safeAddress: addressField,
 };
 
-export async function GET(request: NextRequest): Promise<NextResponse> {
-  console.log("Request Headers", request.headers);
-  const { searchParams } = request.nextUrl;
-  console.log("MultiSend Request", searchParams);
+const drainRouter = Router();
+
+drainRouter.get("/", async (req: Request, res: Response) => {
+  const search = new URLSearchParams(req.url);
+  console.log("MultiSend Request", search);
   const { chainId, recipient, safeAddress } = validateInput<Input>(
-    searchParams,
+    search,
     parsers,
   );
   const [ft, nft] = await Promise.all([
@@ -45,5 +47,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     csv,
     true, // Skip Balance Check.
   );
-  return buildResponse(chainId, response);
-}
+  return res.status(200).json(buildResponse(chainId, response));
+});
+
+export default drainRouter;

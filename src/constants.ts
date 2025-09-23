@@ -33,3 +33,23 @@ export const CHAIN_IDS = [
   11155111, 11155420, 94204209, 111557560, 123420111, 245022926, 245022934,
   666666666, 999999999, 1313161554, 1666600000, 1666700000, 88153591557,
 ];
+
+const {
+  VERCEL_ENV,
+  VERCEL_URL,
+  VERCEL_BRANCH_URL,
+  VERCEL_PROJECT_PRODUCTION_URL,
+} = process.env;
+const DEPLOYMENT_URL = (() => {
+  switch (VERCEL_ENV) {
+    case "production":
+      return `https://${VERCEL_PROJECT_PRODUCTION_URL}`;
+    case "preview":
+      return `https://${VERCEL_BRANCH_URL || VERCEL_URL}`;
+    default:
+      return `http://localhost:${process.env.PORT || 3000}`;
+  }
+})();
+
+export const PLUGIN_URL =
+  DEPLOYMENT_URL || `${"localhost"}:${process.env.PORT || 3000}`;
