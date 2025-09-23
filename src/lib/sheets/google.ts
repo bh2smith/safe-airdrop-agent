@@ -5,7 +5,7 @@ import {
   MetaData,
   RawTokenEntry,
   TokenType,
-} from "./types";
+} from "./types.js";
 
 export function extractSheetId(url: string): string {
   try {

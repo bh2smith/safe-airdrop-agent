@@ -3,22 +3,12 @@ import {
   checkAllBalances,
   getFungibleBalance,
   getCollectibleBalance,
-  Transfer,
   InsufficientBalanceInfo,
-  CodeWarning,
-  buildMetaTransactions,
 } from "multi-asset-transfer";
 import { Address } from "viem";
-import { isUrl } from "../../util";
-import { fetchSheet, formatDataToCSV } from "../../sheets/";
-import { NextResponse } from "next/server";
-import { signRequestFor, MetaTransaction } from "@bitte-ai/agent-sdk/evm";
-
-type ResponseData = {
-  transfers: Transfer[];
-  warnings: CodeWarning[];
-  balances: InsufficientBalanceInfo[];
-};
+import { fetchSheet, formatDataToCSV } from "./sheets/index.js";
+import { ResponseData } from "./types.js";
+import { isUrl } from "./util.js";
 
 export async function csvAirdrop(
   chainId: number,
@@ -64,22 +54,4 @@ export async function csvAirdrop(
     }
   }
   return { transfers, warnings, balances: insufficientBalances };
-}
-
-export function buildResponse(
-  chainId: number,
-  { transfers, warnings, balances }: ResponseData,
-): NextResponse {
-  const transaction = signRequestFor({
-    chainId,
-    metaTransactions: buildMetaTransactions(transfers) as MetaTransaction[],
-  });
-  console.log("Sign Request", transaction);
-  return NextResponse.json({
-    transaction,
-    meta: {
-      transfers,
-      warnings: { parse: warnings, balances },
-    },
-  });
 }
