@@ -35,15 +35,20 @@ export async function fetchSheet(sheetUrl: string): Promise<ParsedCSVResponse> {
       header: true,
       skipEmptyLines: true,
     });
-    const formattedData: TokenEntry[] = parsedData.data.map((entry) => ({
-      token_type: (entry.token_type ??
-        (entry.token_address ? "erc20" : "native")) as TokenType,
-      token_address: entry.token_address ?? null,
-      // TODO(bh2smith) These two are required - handle this better!
-      receiver: entry.receiver!,
-      amount: entry.amount!,
-      id: entry.id ?? null,
-    }));
+    const formattedData: TokenEntry[] = parsedData.data.map((entry) => {
+      if (!(entry.amount && entry.receiver)) {
+        throw new Error("Missing data");
+      }
+      return {
+        token_type: (entry.token_type ??
+          (entry.token_address ? "erc20" : "native")) as TokenType,
+        token_address: entry.token_address ?? null,
+        // TODO(bh2smith) These two are required - handle this better!
+        receiver: entry.receiver,
+        amount: entry.amount,
+        id: entry.id ?? null,
+      };
+    });
 
     return {
       data: formattedData,

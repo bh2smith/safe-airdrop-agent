@@ -1,4 +1,6 @@
 import { defineConfig } from "eslint/config";
+import typescriptEslint from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
@@ -13,5 +15,19 @@ const compat = new FlatCompat({
 });
 
 export default defineConfig([{
-    extends: compat.extends("next/core-web-vitals", "next/typescript"),
+    extends: compat.extends("eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:@typescript-eslint/strict"),
+
+    plugins: {
+        "@typescript-eslint": typescriptEslint,
+    },
+
+    languageOptions: {
+        parser: tsParser,
+        ecmaVersion: 12,
+        sourceType: "module",
+    },
+
+    rules: {
+        "prefer-const": "error",
+    },
 }]);
