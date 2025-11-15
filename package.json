@@ -17,19 +17,19 @@
     "express": "^5.1.0",
     "multi-asset-transfer": "^0.2.2",
     "papaparse": "^5.5.3",
-    "viem": "^2.37.8"
+    "viem": "^2.39.0"
   },
   "devDependencies": {
-    "@types/express": "^5.0.3",
+    "@types/express": "^5.0.5",
     "@types/jest": "^30.0.0",
-    "@types/node": "^24.5.2",
-    "@types/papaparse": "^5.3.16",
-    "@typescript-eslint/eslint-plugin": "^8.44.1",
-    "@typescript-eslint/parser": "^8.44.1",
+    "@types/node": "^24.10.1",
+    "@types/papaparse": "^5.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
     "concurrently": "^9.2.1",
-    "eslint": "^9.36.0",
+    "eslint": "^9.39.1",
     "make-agent": "0.4.1",
     "prettier": "^3.6.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   }
 }
