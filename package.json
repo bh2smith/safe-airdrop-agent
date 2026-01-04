@@ -14,22 +14,22 @@
   "dependencies": {
     "@bitte-ai/agent-sdk": "^0.4.1",
     "cors": "^2.8.5",
-    "express": "^5.1.0",
+    "express": "^5.2.1",
     "multi-asset-transfer": "^0.2.2",
     "papaparse": "^5.5.3",
-    "viem": "^2.39.0"
+    "viem": "^2.43.5"
   },
   "devDependencies": {
-    "@types/express": "^5.0.5",
+    "@types/express": "^5.0.6",
     "@types/jest": "^30.0.0",
-    "@types/node": "^24.10.1",
-    "@types/papaparse": "^5.5.0",
-    "@typescript-eslint/eslint-plugin": "^8.46.4",
-    "@typescript-eslint/parser": "^8.46.4",
+    "@types/node": "^25.0.3",
+    "@types/papaparse": "^5.5.2",
+    "@typescript-eslint/eslint-plugin": "^8.51.0",
+    "@typescript-eslint/parser": "^8.51.0",
     "concurrently": "^9.2.1",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "make-agent": "0.4.1",
-    "prettier": "^3.6.2",
+    "prettier": "^3.7.4",
     "typescript": "^5.9.3"
   }
 }
